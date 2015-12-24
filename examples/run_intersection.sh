@@ -10,7 +10,8 @@ PYTHON="python2.7"
 # does not allow intersections and will try to resolve the intersection.
 # If no resolution is found within the specified number of `avoidance_attempts`,
 # the neurite is terminated
-time PYTHONPATH=intersection/:$PYTHONPATH $PYTHON ../Admin.py 1 intersection/intersection.cfg 
+PYTHONPATH=intersection/:$PYTHONPATH
+time $PYTHON ../Admin.py 1 intersection/intersection.cfg 
 $PYTHON ../scripts/generate_SWC_data.py intersection/intersection.cfg intersection/intersection.db
 $PYTHON ../scripts/helper_generate_movie.py intersection/intersection.cfg intersection/intersection.db
 $PYTHON ../scripts/generate_wire_plot.py intersection/intersection.cfg intersection/intersection.db
